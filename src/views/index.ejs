@@ -1,0 +1,297 @@
+<%- include('includes/head'); %> <!-- Add dados da pasta include(head) -->
+<!-- Sessão Tabela -->
+<div class="container col-md-11 col-sm-12 divCima" id="topo">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive divTableCima">
+                <table class="table table-hover tableCima">
+                    <tr>
+                        <th></th>
+                        <th>2023</th>
+                        <th>2024</th>
+                        <th>2025</th>
+                        <th>2026</th>
+                        <th>2027</th>
+                        <th>2028</th>
+                        <th>2029</th>
+                        <th>2030</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>15 % FIO B</td>
+                        <td>30 % FIO B</td>
+                        <td>45 % FIO B</td>
+                        <td>60 % FIO B</td>
+                        <td>75 % FIO B</td>
+                        <td>90 % FIO B</td>
+                        <td>100 % FIO B</td>
+                        <td>100 % FIO B</td>
+                    </tr>
+                    <tr>
+                        <td>TARIFA</td>
+                        <td>R$0,575</td>
+                        <td>R$0,592</td>
+                        <td>R$0,610</td>
+                        <td>R$0,628</td>
+                        <td>R$0,647</td>
+                        <td>R$0,667</td>
+                        <td>R$0,687</td>
+                        <td>R$0,707</td>
+                    </tr>
+                    <tr>
+                        <td>TUSD 20,6%</td>
+                        <td>R$0,018</td>
+                        <td>R$0,592</td>
+                        <td>R$0,610</td>
+                        <td>R$0,628</td>
+                        <td>R$0,647</td>
+                        <td>R$0,667</td>
+                        <td>R$0,687</td>
+                        <td>R$0,707</td>
+                    </tr>
+                    <tr>
+                        <td>TARIFA COMPE</td>
+                        <td>R$0,018</td>
+                        <td>R$0,592</td>
+                        <td>R$0,612</td>
+                        <td>R$0,628</td>
+                        <td>R$0,647</td>
+                        <td>R$0,667</td>
+                        <td>R$0,687</td>
+                        <td>R$0,707</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sessão Pega Dados -->
+<div class="container containers col-md-11 col-sm-12">
+    <div class="row">
+        <div class="col-md-7 col-sm-12 divAlert" >
+            <div class="alert alert-danger alerta"></div>
+        </div>
+    </div>
+    <div class="row divInforme">
+        <p class="informe">Informe seu consumo de energia mensal e faça uma simulação das sua economia anual.</p>
+    </div>
+    <div class="row pegaDadosRadio">
+        <div class="input-group col-md-5 col-sm-6 divPegaGasto">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Consumo</span>
+            </div>
+            <input type="number" id="txtBuscaResidencial" class="form-control inputPegaValor" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
+            <span>kWH/mês</span>
+        </div>
+        <div class="col-md-2 divRadio col-sm-6">
+            <div class="formGroup">
+                <div class="input-group-text divRadio">
+                    <input class="radio" name="theradio" id="radio1" type="radio" aria-label="Botão radio para acompanhar input text">
+                    <label class="label" for="radio1">Residencial</label>
+                </div>
+            </div>
+            <div class="formGroup">
+                <div class="input-group-text divRadio">
+                    <input class="radio" name="theradio" id="radio2" type="radio" aria-label="Botão radio para acompanhar input text">
+                    <label class="label" for="radio2">Comercial</label>
+                </div>
+            </div>
+        </div>      
+    </div>
+    <div class="row economia">
+        <p>Sua economia no ano cheio de <%- new Date().getFullYear(); %> será de R$</p><p class="economiaAno"></p> <p>.00&nbsp; </p> <p> Uma economia de&nbsp;</p><p class="economiaPorc"></p>
+    </div>
+</div>
+
+<!-- Sessão Tabela Calculos -->
+<div class="container containers col-md-11 col-sm-12">
+    <div class="row infoDados">
+        <p>&nbsp;&nbsp;Dados da tabela considerando um aumento na tarifa da concessionaria médio de 5% anual e Regras da LEI 14.300 aplicadas em 06/01/2023. 
+            Vale informar que são apenas estimativas aproximadas de calculo considerando a concessionaria CELESC, recomendamos que solicite um orçamento com nossos consultores para analisarem o seu caso com individualidade e assim realizar um projeto especifico.</p>
+    </div>
+    <div class="table-responsive table-hover">
+        <table class="table tableBaixo">
+            <thead>
+                <tr>
+                    <th class="vazio"></th>
+                    <th class="vazio"></th>
+                    <th class="fatura">Sem energia solar</th>
+                    <th class="pEnergia">Com energia solar</th>
+                    <th class="eMensal" colspan="2">Economia mensal</th>
+                    <th class="eAnual">Economia anual</th>
+                </tr>
+            </thead>
+            <tbody class="tbody" id="idTbory">
+                <tr>
+                    <td>TUSD FIO B%</td>
+                    <td>ANO</td>
+                    <td class="faturat">R$</td>
+                    <td>R$</td>
+                    <td>R$</td>
+                    <td>%</td>
+                    <td>R$</td>
+                </tr>
+                <tr class="linha15PorCento" id="tdEditavel">
+                    <td>15%</td>
+                    <td>2023</td>
+                    <td class="faturat"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="lucro"></td>
+                </tr>
+                <tr>
+                    <td>30%</td>
+                    <td>2024</td>
+                    <td class="faturat"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="lucro"></td>
+                </tr>
+                <tr>
+                    <td>45%</td>
+                    <td>2025</td>
+                    <td class="faturat"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="lucro"></td>
+                </tr>
+                <tr>
+                    <td>60%</td>
+                    <td>2026</td>
+                    <td class="faturat"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="lucro"></td>
+                </tr>
+                <tr>
+                    <td>75%</td>
+                    <td>2027</td>
+                    <td class="faturat"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="lucro"></td>
+                </tr>
+                <tr>
+                    <td>90%</td>
+                    <td>2028</td>
+                    <td class="faturat"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="lucro"></td>
+                </tr>
+                <tr>
+                    <td>100%</td>
+                    <td>2029</td>
+                    <td class="faturat"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="lucro"></td>
+                </tr>
+                <tr>
+                    <td>100%</td>
+                    <td>2030</td>
+                    <td class="faturat"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="lucro"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Sessão Pega Formulario -->
+<div class="container-fluid containers col-md-11 col-sm-12 divContatoForm">
+    <div class="row divPreencha">
+        <p class="preencha">Preencha o formulario que logo um representante estará entrando em contato com você.</p>
+    </div>
+    <div class="row">
+        <form class="form col-md-6 divForm" action="/" method="POST" id="form">
+            <div class="form-group">
+              <label for="exampleInputName1">Nome Completo</label>
+              <input type="string" name="nomeCompleto" class="form-control nome" id="nome" placeholder="Nome" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Endereço de email</label>
+                <input type="email" name="email" class="form-control email" id="e-mail"  aria-describedby="emailHelp" placeholder="Email">
+              </div>
+            <div class="form-group">
+                <label for="exampleInputName1">Telefone</label>
+                <input type="text" name="telefone" id="tel" class="form-control telefoneMascara" placeholder="Telefone" maxlength="13" OnkeyPress="formatar('##-#####-####', this)" required>
+            </div>
+            <input type="submit" class="btn btn-primary enviar" id="button" value="Enviar" >
+        </form>
+        <div class="icons col-md-6 divContato">
+            <div class="row">
+                <div class="div-left col-md-6">
+
+                    <div class="row" id="contato">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                        <div class="info">
+                            <div class="head">Contato</div>
+                            <div class="sub-title">(48) 3371-5402</div>
+                            <div class="sub-title">(48) 99186-8080</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <div class="info">
+                            <div class="head">Email</div>
+                            <div class="sub-title">contato@mgtecsolar.com.br</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-right col-md-6">
+                    <div class="row">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                        <div class="info">
+                            <div class="head">Instagram</div>
+                            <a href="https://www.instagram.com/mgtecenergiasolar/" target="_blank">
+                                <div class="sub-title">@mgtecenergiasolar</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <ion-icon name="globe-outline"></ion-icon>
+                        <div class="info">
+                            <div class="head">Site</div>
+                            <a href="https://www.mgtecsolar.com.br/" target="_blank">
+                                <div class="sub-title">mgtecsolar.com.br</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            function formatar(mascara, documento){
+                const i = documento.value.length;
+                const saida = mascara.substring(0,1);
+                const texto = mascara.substring(i);
+                if (texto.substring(0,1) != saida) documento.value += texto.substring(0,1);
+            }
+        </script>
+          
+    </div>
+</div>
+
+<!-- Sessão Area de Destaque -->
+<div class="container containers col-md-11 col-sm-12 divDestaque">
+    <p class="click">Click em <button class="btn btn-primary build">CARREGAR</button> para ver o gráfico com suas economias.</p>
+    <div class="row">
+        <canvas class="grafico" id="acquisitions"></canvas>
+    </div>
+</div>
+
+<%- include('includes/footer'); %> <!-- Add dados da pasta include(footer) -->
