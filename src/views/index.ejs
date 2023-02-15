@@ -1,6 +1,6 @@
 <%- include('includes/head'); %> <!-- Add dados da pasta include(head) -->
 <!-- Sessão Tabela -->
-<div class="container col-md-11 col-sm-12 divCima" id="topo">
+<div class="container col-md-11 col-sm-12 divCima1">
     <div class="row">
         <div class="col-md-12">
             <div class="table-responsive divTableCima">
@@ -30,39 +30,46 @@
                     <tr>
                         <td>TARIFA</td>
                         <td>R$0,575</td>
-                        <td>R$0,592</td>
-                        <td>R$0,610</td>
-                        <td>R$0,628</td>
-                        <td>R$0,647</td>
-                        <td>R$0,667</td>
-                        <td>R$0,687</td>
-                        <td>R$0,707</td>
+                        <td>R$0,604</td>
+                        <td>R$0,634</td>
+                        <td>R$0,666</td>
+                        <td>R$0,699</td>
+                        <td>R$0,734</td>
+                        <td>R$0,771</td>
+                        <td>R$0,809</td>
                     </tr>
                     <tr>
                         <td>TUSD 20,6%</td>
                         <td>R$0,018</td>
-                        <td>R$0,592</td>
-                        <td>R$0,610</td>
-                        <td>R$0,628</td>
-                        <td>R$0,647</td>
-                        <td>R$0,667</td>
-                        <td>R$0,687</td>
-                        <td>R$0,707</td>
+                        <td>R$0,037</td>
+                        <td>R$0,059</td>
+                        <td>R$0,082</td>
+                        <td>R$0,108</td>
+                        <td>R$0,136</td>
+                        <td>R$0,146</td>
+                        <td>R$0,153</td>
                     </tr>
                     <tr>
                         <td>TARIFA COMPE</td>
-                        <td>R$0,018</td>
-                        <td>R$0,592</td>
-                        <td>R$0,612</td>
-                        <td>R$0,628</td>
-                        <td>R$0,647</td>
-                        <td>R$0,667</td>
-                        <td>R$0,687</td>
-                        <td>R$0,707</td>
+                        <td>R$0,557</td>
+                        <td>R$0,566</td>
+                        <td>R$0,575</td>
+                        <td>R$0,583</td>
+                        <td>R$0,591</td>
+                        <td>R$0,598</td>
+                        <td>R$0,625</td>
+                        <td>R$0,656</td>
                     </tr>
                 </table>
             </div>
         </div>
+    </div>
+</div>
+<div class="container col-md-12 col-sm-12 divCima" id="topo">
+    <div class="row col-sm-12">
+        <h1>Simulador de Energia Solar Fotovoltaica para</h1>
+        <h1>Residências, Indústrias e Agronegócios</h1>
+        <h3>Simule suas economias até 2030</h3>
     </div>
 </div>
 
@@ -74,17 +81,17 @@
         </div>
     </div>
     <div class="row divInforme">
-        <p class="informe">Informe seu consumo de energia mensal e faça uma simulação das sua economia anual.</p>
+        <h3 class="informe">Consumo mensal</h3>
     </div>
     <div class="row pegaDadosRadio">
-        <div class="input-group col-md-5 col-sm-6 divPegaGasto">
+        <div class="input-group col-sm-6 divPegaGasto">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Consumo</span>
             </div>
             <input type="number" id="txtBuscaResidencial" class="form-control inputPegaValor" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
             <span>kWH/mês</span>
         </div>
-        <div class="col-md-2 divRadio col-sm-6">
+        <div class="divRadio col-sm-6">
             <div class="formGroup">
                 <div class="input-group-text divRadio">
                     <input class="radio" name="theradio" id="radio1" type="radio" aria-label="Botão radio para acompanhar input text">
@@ -97,9 +104,17 @@
                     <label class="label" for="radio2">Comercial</label>
                 </div>
             </div>
-        </div>      
+            <select class="input-group-text tipoRede" aria-label="Default select example">
+                <option selected class="tipoRede">Informe seu tipo de rede</option>
+                <option value="1">Monofásico</option>
+                <option value="2">Bifásico</option>
+                <option value="3">Trifásico</option>
+            </select>
+        </div>
+
     </div>
     <div class="row economia">
+        <ion-icon name="cash-outline"></ion-icon>
         <p>Sua economia no ano cheio de <%- new Date().getFullYear(); %> será de R$</p><p class="economiaAno"></p> <p>.00&nbsp; </p> <p> Uma economia de&nbsp;</p><p class="economiaPorc"></p>
     </div>
 </div>
@@ -107,7 +122,7 @@
 <!-- Sessão Tabela Calculos -->
 <div class="container containers col-md-11 col-sm-12">
     <div class="row infoDados">
-        <p>&nbsp;&nbsp;Dados da tabela considerando um aumento na tarifa da concessionaria médio de 5% anual e Regras da LEI 14.300 aplicadas em 06/01/2023. 
+        <p>&nbsp;Dados da tabela considerando um aumento na tarifa da concessionaria médio de 5% anual e Regras da LEI 14.300 aplicadas em 06/01/2023. 
             Vale informar que são apenas estimativas aproximadas de calculo considerando a concessionaria CELESC, recomendamos que solicite um orçamento com nossos consultores para analisarem o seu caso com individualidade e assim realizar um projeto especifico.</p>
     </div>
     <div class="table-responsive table-hover">
@@ -212,7 +227,7 @@
 <!-- Sessão Pega Formulario -->
 <div class="container-fluid containers col-md-11 col-sm-12 divContatoForm">
     <div class="row divPreencha">
-        <p class="preencha">Preencha o formulário.</p>
+        <h3 class="preencha">Preencha o formulário.</h3>
     </div>
     <div class="row">
         <form class="form col-md-6 divForm" action="/" method="POST" id="form">

@@ -5,17 +5,19 @@ import Chart from 'chart.js/auto'
 
 window.onload = function() {
     $('#txtBuscaResidencial').click(() => {
-        verificaRadio();
+        verificaRadioSelect();
     })
     $('#txtBuscaResidencial').keyup((c) => {
         const radio = $('input[name="theradio"]:checked').attr('id');
-        verificaRadio();
+        verificaRadioSelect();
         if(radio === 'radio1') {
             c = 0.7;
         }
         if(radio === 'radio2') {
             c = 0.5;
         }
+        
+
         calculoPorLinhaFatura(0.575, 45);
         calculoPorLinhaFatura(0.604, 52);
         calculoPorLinhaFatura(0.634, 59);
@@ -178,6 +180,7 @@ window.onload = function() {
         }
     });
 
+
     const insereDestaque = (y, z) => {
         const economia = $('.economiaAno');
         const porcento = $('.economiaPorc');
@@ -193,7 +196,7 @@ window.onload = function() {
         if(v === 'R$ 0' || v === 'NaN %') {
             v = '';
             window.$('td').eq(l).text(v);
-        } else{ window.$('td').eq(l).text(v); } 
+        } else{ window.$('td').eq(l).text(v)}; 
     }
     const calculoPorLinhaFatura = (y, z) => {
         const gastoMesResidencial = $('#txtBuscaResidencial').val();
@@ -202,13 +205,17 @@ window.onload = function() {
         const linha45TextInsere = ('R$ ' + linha45Text);
         const td = insereValorLinha(z, linha45TextInsere);
     }
+
+
     const calculoPorLinhaEnergia = (y, z, x) => {
         const gastoMesResidencial = $('#txtBuscaResidencial').val();
         const linha45 = Math.round(gastoMesResidencial * x * y);
         const linha45Text = parseInt(linha45);
         const linha45TextInsere = ('R$ ' + linha45Text);
-        const td = insereValorLinha(z, linha45TextInsere);
+        insereValorLinha(z, linha45TextInsere);
     }
+
+    
     const calculaLinhaMensal = (w, y, z) => {
         const pEnergia = pegaLinha(w);
         const eMensal = pegaLinha(y);
@@ -232,11 +239,19 @@ window.onload = function() {
         const calculoTextInsere = ('R$ ' + calculoText);
         insereValorLinha(z, calculoTextInsere);
     }
-    const verificaRadio = () => {
+    const verificaRadioSelect = () => {
         const radio = $('input[name="theradio"]:checked').attr('id');
         if(!radio) {
             $('.divAlert').addClass('ativar');
             $('.alerta').text('Informe se seu consumo é RESIDENCIAL ou COMERCIAL.');
+            $('.alert').addClass('ativar');
+            $('#txtBuscaResidencial').blur();
+            return;   
+        }
+        const select = $('.tipoRede').val();
+        if(select === 'Informe seu tipo de rede') {
+            $('.divAlert').addClass('ativar');
+            $('.alerta').text('Informe seu tipo de rede.');
             $('.alert').addClass('ativar');
             $('#txtBuscaResidencial').blur();
             return;   

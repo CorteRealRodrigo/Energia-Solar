@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Orbitron&family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 /*
 .container{}
 .row{}
@@ -8,13 +9,35 @@ html{
     scroll-behavior: smooth;
     font-family: 'Orbitron', sans-serif;
 }
-
-.divCima{
-    background-color: rgba(26, 63, 155, 0.096);
-    border-radius: 20px;
+body{
+    background: rgba(26, 63, 155, 0.096);
 }
-.tableCima{
-    margin-top: 80px;
+.divCima1{
+    display: none;
+}
+.divCima{
+    background: url(../img/energiaSolar2.jpg) no-repeat;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.divCima .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.divCima .row h1{
+    font-size: 55px;
+}
+.divCima .row h1,
+.divCima .row h3{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #0e5466;
 }
 .containers{
     margin-top: 15px;
@@ -51,7 +74,6 @@ html{
     font-size: 40px;
     margin: 0;
 }
-
 .logosTopo{
     display: flex;
     flex-wrap: nowrap;
@@ -59,8 +81,6 @@ html{
     text-align: center;
     display: flex;
 }
-
-
 
 /* Sessão Tabela*/
 .lucro{
@@ -217,20 +237,32 @@ ion-icon{
     width: 100%;
     font-weight: bold;
 }
+.preencha{
+    font-family: 50px;
+}
 .container .economia{
     color: green;
     opacity: 0;
     transition: all 300ms ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .economia p{
+    font-size: 20px;
 }
 .container .economia.ativar{
     opacity: 1;
 }
 .container .economia{
-    margin: 0 10px;
+    margin: 10px 10px;
     padding-bottom: 10px;
 }
 .container .economia p{
     margin: 0;
+}
+.tipoRede{
+    border: 2px solid rgb(55, 190, 214);
 }
 
 /* Sessão Area de Destaque */
@@ -361,12 +393,23 @@ ion-icon{
         left: 0;
     }
 }
+@media (max-width: 1159px){
+    .divCima .row h1{
+        font-size: 45px;
+    }
+}
 @media (max-width: 1013px){
     .container .icons .info{
         font-size: 15px;
     }
     .whats img{
         width: 80px;
+    }
+
+}
+@media (max-width: 962px){
+    .divCima .row h1{
+        font-size: 35px;
     }
 }
 @media (max-width: 930px){
@@ -441,6 +484,12 @@ ion-icon{
     .logosTopo ion-icon{
         font-size: 15px;
     }
+    .divCima .row h1{
+        font-size: 30px;
+    }
+    .divCima .row h3{
+        font-size: 24px;
+    }
 }
 @media (max-width: 690px){
     .container .divInforme,
@@ -458,10 +507,15 @@ ion-icon{
     .form-group input{
         max-height: 40px;
     }
-
-    
 }
-
+@media (max-width: 663px){
+    .divCima .row h1{
+        font-size: 25px;
+    }
+    .divCima .row h3{
+        font-size: 18px;
+    }
+}
 @media (max-width: 650px){
 
     .container .divInforme,
@@ -487,6 +541,14 @@ ion-icon{
     }
     .infoDados{
         margin: 20px 0 0 0;  
+    }
+}
+@media (max-width: 561px){
+    .divCima .row h1{
+        font-size: 20px;
+    }
+    .divCima .row h3{
+        font-size: 15px;
     }
 }
 @media (max-width: 550px){
@@ -539,6 +601,13 @@ ion-icon{
     .enviar{
         padding: 0;
     }
+    .divCima .row h1{
+        font-size: 16px;
+    }
+    .divCima .row h3{
+        font-size: 12px;
+    }
+    
 }
 
 @media (max-width: 478px){
