@@ -7,8 +7,9 @@ window.onload = function() {
     $('#txtBuscaResidencial').click(() => {
         verificaRadioSelect();
     })
-    $('#txtBuscaResidencial').keyup((c) => {
+    $('#txtBuscaResidencial').keyup((c, d) => {
         const radio = $('input[name="theradio"]:checked').attr('id');
+        
         verificaRadioSelect();
         if(radio === 'radio1') {
             c = 0.7;
@@ -16,8 +17,52 @@ window.onload = function() {
         if(radio === 'radio2') {
             c = 0.5;
         }
+
+        const tipoEnergia = $('.tipoRede').val();
+        if(tipoEnergia == 1) {
+            function* cores(){ 
+                yield '17.25';  
+                yield '18.11';  
+                yield '19.02';  
+                yield '19.97';  
+                yield '20.97';  
+                yield '22.02';  
+                yield '23.12';
+                yield '24.27';
+            }
+            d = cores();
+        }
+        if(tipoEnergia == 2) {
+            function* cores(){ 
+                yield '28.75';
+                yield '30.19';
+                yield '31.70';
+                yield '33.28';
+                yield '34.95';
+                yield '36.69';
+                yield '38.53';
+                yield '40.45';
+            }
+            d = cores();
+        }
+        if(tipoEnergia == 3) {
+            function* cores(){ 
+                yield '57.50';
+                yield '60.38';
+                yield '63.39';
+                yield '66.56';
+                yield '69.89';
+                yield '73.39';
+                yield '77.06';
+                yield '80.91';
+            }
+            d = cores();
+        }
+
+
         
 
+        
         calculoPorLinhaFatura(0.575, 45);
         calculoPorLinhaFatura(0.604, 52);
         calculoPorLinhaFatura(0.634, 59);
@@ -27,14 +72,17 @@ window.onload = function() {
         calculoPorLinhaFatura(0.771, 87);
         calculoPorLinhaFatura(0.809, 94);
     
-        calculoPorLinhaEnergia(0.018, 46, c);
-        calculoPorLinhaEnergia(0.037, 53, c);
-        calculoPorLinhaEnergia(0.059, 60, c);
-        calculoPorLinhaEnergia(0.082, 67, c);
-        calculoPorLinhaEnergia(0.108, 74, c);
-        calculoPorLinhaEnergia(0.136, 81, c);
-        calculoPorLinhaEnergia(0.146, 88, c);
-        calculoPorLinhaEnergia(0.153, 95, c);
+        calculoPorLinhaEnergia(0.018, 46, c, d);
+        calculoPorLinhaEnergia(0.037, 53, c, d);
+        calculoPorLinhaEnergia(0.059, 60, c, d);
+        calculoPorLinhaEnergia(0.082, 67, c, d);
+        calculoPorLinhaEnergia(0.108, 74, c, d);
+        calculoPorLinhaEnergia(0.136, 81, c, d);
+        calculoPorLinhaEnergia(0.146, 88, c, d);
+        calculoPorLinhaEnergia(0.153, 95, c, d);
+
+        
+        
         
         calculaLinhaMensal(45, 46, 47);
         calculaLinhaMensal(52, 53, 54);
@@ -207,13 +255,25 @@ window.onload = function() {
     }
 
 
-    const calculoPorLinhaEnergia = (y, z, x) => {
+    const calculoPorLinhaEnergia = (y, z, x, d) => {
         const gastoMesResidencial = $('#txtBuscaResidencial').val();
         const linha45 = Math.round(gastoMesResidencial * x * y);
+        
+        const valorMinimo = d.next().value;
+        const valorMinimoNum = Number(valorMinimo);
+
+        if(linha45 < valorMinimoNum) {
+            const linha46 = valorMinimoNum;
+            const linha45Text = parseInt(linha46);
+            const linha45TextInsere = ('R$ ' + linha45Text);
+            insereValorLinha(z, linha45TextInsere);
+            return;
+        }
         const linha45Text = parseInt(linha45);
         const linha45TextInsere = ('R$ ' + linha45Text);
         insereValorLinha(z, linha45TextInsere);
     }
+
 
     
     const calculaLinhaMensal = (w, y, z) => {

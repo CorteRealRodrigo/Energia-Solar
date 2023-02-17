@@ -74,24 +74,21 @@
 </div>
 
 <!-- Sessão Pega Dados -->
-<div class="container containers col-md-11 col-sm-12">
-    <div class="row">
-        <div class="col-md-7 col-sm-12 divAlert" >
-            <div class="alert alert-danger alerta"></div>
-        </div>
-    </div>
-    <div class="row divInforme">
-        <h3 class="informe">Consumo mensal</h3>
-    </div>
-    <div class="row pegaDadosRadio">
-        <div class="input-group col-sm-6 divPegaGasto">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Consumo</span>
+<div class="container containers containerPegaDados col-md-11 col-sm-12">
+    
+    <div class="row col-sm-12">
+
+        <div class="row">
+            <div class="col-md-7 col-sm-12 divAlert" >
+                <div class="alert alert-danger alerta"></div>
             </div>
-            <input type="number" id="txtBuscaResidencial" class="form-control inputPegaValor" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
-            <span>kWH/mês</span>
         </div>
-        <div class="divRadio col-sm-6">
+    
+        <div class="row divInforme">
+            <h3 class="informe">Tipo de imovel</h3>
+        </div>
+    
+        <div class=" row divRadio col-sm-6">
             <div class="formGroup">
                 <div class="input-group-text divRadio">
                     <input class="radio" name="theradio" id="radio1" type="radio" aria-label="Botão radio para acompanhar input text">
@@ -104,19 +101,39 @@
                     <label class="label" for="radio2">Comercial</label>
                 </div>
             </div>
-            <select class="input-group-text tipoRede" aria-label="Default select example">
+        </div>
+    
+        <div class="row divInforme">
+            <h3 class="informe">Tipo de rede</h3>
+        </div>
+    
+        <div class="row divSelect">
+            <select class="input-group-text tipoRede divRadio" aria-label="Default select example">
                 <option selected class="tipoRede">Informe seu tipo de rede</option>
                 <option value="1">Monofásico</option>
                 <option value="2">Bifásico</option>
                 <option value="3">Trifásico</option>
             </select>
         </div>
+    
+        <div class="row divInforme">
+            <h3 class="informe">Consumo mensal</h3>
+        </div>
+    
+        <div class=" row input-group col-sm-6 divPegaGasto">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Consumo</span>
+            </div>
+            <input type="number" id="txtBuscaResidencial" class="form-control inputPegaValor" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
+            <span>kWH/mês</span>
+        </div>
+    
+        <div class="row economia">
+            <ion-icon name="cash-outline"></ion-icon>
+            <p>Sua economia no ano cheio de <%- new Date().getFullYear(); %> será de R$</p><p class="economiaAno"></p> <p>.00&nbsp; </p> <p> Uma economia de&nbsp;</p><p class="economiaPorc"></p>
+        </div>
+    </div>
 
-    </div>
-    <div class="row economia">
-        <ion-icon name="cash-outline"></ion-icon>
-        <p>Sua economia no ano cheio de <%- new Date().getFullYear(); %> será de R$</p><p class="economiaAno"></p> <p>.00&nbsp; </p> <p> Uma economia de&nbsp;</p><p class="economiaPorc"></p>
-    </div>
 </div>
 
 <!-- Sessão Tabela Calculos -->

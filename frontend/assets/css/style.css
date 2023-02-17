@@ -37,7 +37,7 @@ body{
 .divCima .row h3{
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    color: #0e5466;
+    color: #ffffff;
 }
 .containers{
     margin-top: 15px;
@@ -92,22 +92,22 @@ body{
     border: 0;
 }
 .fatura{
-    background: red;
+    background: url(../img/vermelho.avif) no-repeat center;
     color: white;
 }
 .faturat{
     color: red;
 }
 .pEnergia{
-    background: blue;
+    background: url(../img/azul.avif) no-repeat center;
     color: white;
 }
 .eMensal{
-    background: rgb(6, 158, 6);
+    background: url(../img/verde.avif) no-repeat center;
     color: white;
 }
 .eAnual{
-    background: green;
+    background: url(../img/verde2.avif) no-repeat center;
     color: white;
 }
 table{
@@ -158,6 +158,11 @@ ion-icon{
 }
 
 /* Sessão Pega Dados*/
+.containerPegaDados{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 .divPegaGasto{
     display: flex;
     align-items: center;
@@ -166,14 +171,13 @@ ion-icon{
 .divPegaGasto span{
     margin-left: 5px;
 }
+.divRow{
+    
+    border: 2px solid black;
+}
 
-.pegaDadosRadio{
-    padding-bottom: 15px;
-}
-.divRadio{
-    display: flex;
-    align-items: center;
-}
+
+
 .formGroup{
     margin: 0 5px 0 5px;
     display: flex;
@@ -190,6 +194,9 @@ ion-icon{
     justify-content: center;
     margin-top: 7px;
     margin-left: 5px;
+}
+.divSelect{
+    margin-left: 10px
 }
 
 .divRadio{
