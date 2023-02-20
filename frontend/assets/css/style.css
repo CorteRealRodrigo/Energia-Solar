@@ -9,9 +9,7 @@ html{
     scroll-behavior: smooth;
     font-family: 'Orbitron', sans-serif;
 }
-body{
-    background: rgba(26, 63, 155, 0.096);
-}
+
 .divCima1{
     display: none;
 }
@@ -35,15 +33,17 @@ body{
 }
 .divCima .row h1,
 .divCima .row h3{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'pf beau sans', sans-serif !important;
     font-weight: bold;
     color: #ffffff;
 }
 .containers{
-    margin-top: 15px;
-    margin-bottom: 15px;
-    background-color: rgba(26, 63, 155, 0.096);
-    border-radius: 20px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-top: 30px;
+    /* background: url(../img/fundoAzul.avif); */
+    background: #a9bbbe60;
+   
 }
 /* Sessão NavBar */
 .navbar img{
@@ -87,6 +87,7 @@ body{
     color: rgb(12, 148, 0);
     
 }
+
 .vazio{
     text-decoration: none;
     border: 0;
@@ -96,7 +97,13 @@ body{
     color: white;
 }
 .faturat{
-    color: red;
+    color: rgb(185, 21, 21);
+}
+.comEner{
+    color: rgb(35, 77, 156);
+}
+.ecoMens{
+    color: rgb(6, 82, 6);
 }
 .pEnergia{
     background: url(../img/azul.avif) no-repeat center;
@@ -113,6 +120,7 @@ body{
 table{
     text-align: center;
     font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
 }
 .tableCima{
     font-size: 15px;
@@ -122,9 +130,14 @@ table{
     padding: 5px;
 }
 .infoDados{
-    margin: 20px 10px 0 10px;  
+    margin: 20px 10px 0 10px;
+    background: url(../img/fundoAzul.avif) no-repeat center;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 15px 0 15px 0;
 }
 .infoDados p{
+    font-size: 20px;
     margin-top: 10px;
     text-align: justify;
 }
@@ -161,28 +174,36 @@ ion-icon{
 .containerPegaDados{
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
+.containerPegaDados h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #0f5a68;
+}
+.divRows{
+    max-width: 380px;
+}
+
 .divPegaGasto{
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
+    font-size: 25px;
 }
 .divPegaGasto span{
     margin-left: 5px;
+    font-size: 25px;
 }
-.divRow{
-    
-    border: 2px solid black;
+.divPegaGasto input{
+    font-size: 25px;
+    min-height: 50px;
 }
-
-
-
 .formGroup{
     margin: 0 5px 0 5px;
     display: flex;
-    align-items: center;
-    
+    align-items: center; 
 }
 .formGroup input,
 .formGroup label{
@@ -196,11 +217,16 @@ ion-icon{
     margin-left: 5px;
 }
 .divSelect{
-    margin-left: 10px
+    margin-left: 10px;
+    cursor: pointer;
 }
-
 .divRadio{
-    max-height: 40px;
+    max-height: 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 25px;
+    border-radius: 10px;
 }
 .radio{
     appearance: none;
@@ -231,12 +257,11 @@ ion-icon{
     box-shadow: 0 0 5px rgb(0, 0, 0);
     transition: all 400ms ease-in-out;
 }
-
 .inputPegaValor[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;
 }
 .inputPegaValor{
-    min-width: 100px;
+    min-width: 150px;
     text-align: center;
 }
 .container .divInforme{
@@ -248,15 +273,34 @@ ion-icon{
     font-family: 50px;
 }
 .container .economia{
-    color: green;
     opacity: 0;
     transition: all 300ms ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: url(../img/eco2023.crdownload) no-repeat center;
+    border-radius: 15px 0 15px 0;
+    padding: 15px;
+}
+.container .economia ion-icon{
+    color: rgb(68, 163, 68);
+    font-size: 55px;
+}
+.container .economia button{
+    margin-left: 10px;
+    border-radius: 15px 0 15px 0;
+    font-size: 25px;
+    background: url(../img/btnVerde) no-repeat center;
+    font-family: 'Chakra Petch', sans-serif;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
 }
 .container .economia p{
-    font-size: 20px;
+    font-size: 30px;
+    font-family: 'Chakra Petch', sans-serif;
+    color: white;
 }
 .container .economia.ativar{
     opacity: 1;
@@ -269,15 +313,11 @@ ion-icon{
     margin: 0;
 }
 .tipoRede{
-    border: 2px solid rgb(55, 190, 214);
+    margin-left: 0;
+    min-height: 50px;
 }
 
 /* Sessão Area de Destaque */
-.divDestaque{
-    background-color: rgba(26, 63, 155, 0.096);
-    border-radius: 20px;
-    padding: 20px;
-}
 .divDestaque p{
     text-align: justify;
 }
@@ -305,7 +345,7 @@ ion-icon{
     align-items: center;
     opacity: 0;
     transition: all 300ms ease-in-out;
-    min-width: 500px;
+    min-width: 340px;
 }
 .ativar{
     opacity: 1;  

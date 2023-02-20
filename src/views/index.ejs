@@ -1,6 +1,6 @@
 <%- include('includes/head'); %> <!-- Add dados da pasta include(head) -->
 <!-- Sessão Tabela -->
-<div class="container col-md-11 col-sm-12 divCima1">
+<div class="container col-md-12 col-sm-12 divCima1">
     <div class="row">
         <div class="col-md-12">
             <div class="table-responsive divTableCima">
@@ -74,9 +74,9 @@
 </div>
 
 <!-- Sessão Pega Dados -->
-<div class="container containers containerPegaDados col-md-11 col-sm-12">
+<div class="container containers containerPegaDados col-md-12 col-sm-12">
     
-    <div class="row col-sm-12">
+    <div class="row col-sm-12 divRows">
 
         <div class="row">
             <div class="col-md-7 col-sm-12 divAlert" >
@@ -85,7 +85,7 @@
         </div>
     
         <div class="row divInforme">
-            <h3 class="informe">Tipo de imovel</h3>
+            <h2 class="informe">Tipo de imovel</h2>
         </div>
     
         <div class=" row divRadio col-sm-6">
@@ -104,7 +104,7 @@
         </div>
     
         <div class="row divInforme">
-            <h3 class="informe">Tipo de rede</h3>
+            <h2 class="informe">Tipo de rede</h2>
         </div>
     
         <div class="row divSelect">
@@ -117,7 +117,7 @@
         </div>
     
         <div class="row divInforme">
-            <h3 class="informe">Consumo mensal</h3>
+            <h2 class="informe">Consumo mensal</h2>
         </div>
     
         <div class=" row input-group col-sm-6 divPegaGasto">
@@ -128,22 +128,21 @@
             <span>kWH/mês</span>
         </div>
     
-        <div class="row economia">
-            <ion-icon name="cash-outline"></ion-icon>
-            <p>Sua economia no ano cheio de <%- new Date().getFullYear(); %> será de R$</p><p class="economiaAno"></p> <p>.00&nbsp; </p> <p> Uma economia de&nbsp;</p><p class="economiaPorc"></p>
-        </div>
+    </div>
+    <div class="row economia">
+        <ion-icon name="cash-outline"></ion-icon>
+        <p>Sua economia no ano cheio de <%- new Date().getFullYear();%> será de R$</p><p class="economiaAno"></p> <p>.00&nbsp; </p> <p> Uma economia de&nbsp;</p><p class="economiaPorc"></p>
+        <a href="https://wa.me/5548991807618" target="_blank">
+            <button>Falar com um especialista</button>
+        </a>
     </div>
 
 </div>
 
 <!-- Sessão Tabela Calculos -->
-<div class="container containers col-md-11 col-sm-12">
-    <div class="row infoDados">
-        <p>&nbsp;Dados da tabela considerando um aumento na tarifa da concessionaria médio de 5% anual e Regras da LEI 14.300 aplicadas em 06/01/2023. 
-            Vale informar que são apenas estimativas aproximadas de calculo considerando a concessionaria CELESC, recomendamos que solicite um orçamento com nossos consultores para analisarem o seu caso com individualidade e assim realizar um projeto especifico.</p>
-    </div>
+<div class="container containers containerTabela col-md-12 col-sm-12">
     <div class="table-responsive table-hover">
-        <table class="table tableBaixo">
+        <table class="table tableBaixo table-striped table-hover">
             <thead>
                 <tr>
                     <th class="vazio"></th>
@@ -159,90 +158,93 @@
                     <td>TUSD FIO B%</td>
                     <td>ANO</td>
                     <td class="faturat">R$</td>
-                    <td>R$</td>
-                    <td>R$</td>
-                    <td>%</td>
-                    <td>R$</td>
+                    <td class="comEner">R$</td>
+                    <td class="ecoMens">R$</td>
+                    <td class="ecoMens">%</td>
+                    <td class="lucro">R$</td>
                 </tr>
                 <tr class="linha15PorCento" id="tdEditavel">
                     <td>15%</td>
                     <td>2023</td>
                     <td class="faturat"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="comEner"></td>
+                    <td class="ecoMens"></td>
+                    <td class="ecoMens"></td>
                     <td class="lucro"></td>
                 </tr>
                 <tr>
                     <td>30%</td>
                     <td>2024</td>
                     <td class="faturat"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="comEner"></td>
+                    <td class="ecoMens"></td>
+                    <td class="ecoMens"></td>
                     <td class="lucro"></td>
                 </tr>
                 <tr>
                     <td>45%</td>
                     <td>2025</td>
                     <td class="faturat"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="comEner"></td>
+                    <td class="ecoMens"></td>
+                    <td class="ecoMens"></td>
                     <td class="lucro"></td>
                 </tr>
                 <tr>
                     <td>60%</td>
                     <td>2026</td>
                     <td class="faturat"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="comEner"></td>
+                    <td class="ecoMens"></td>
+                    <td class="ecoMens"></td>
                     <td class="lucro"></td>
                 </tr>
                 <tr>
                     <td>75%</td>
                     <td>2027</td>
                     <td class="faturat"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="comEner"></td>
+                    <td class="ecoMens"></td>
+                    <td class="ecoMens"></td>
                     <td class="lucro"></td>
                 </tr>
                 <tr>
                     <td>90%</td>
                     <td>2028</td>
                     <td class="faturat"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="comEner"></td>
+                    <td class="ecoMens"></td>
+                    <td class="ecoMens"></td>
                     <td class="lucro"></td>
                 </tr>
                 <tr>
                     <td>100%</td>
                     <td>2029</td>
                     <td class="faturat"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="comEner"></td>
+                    <td class="ecoMens"></td>
+                    <td class="ecoMens"></td>
                     <td class="lucro"></td>
                 </tr>
                 <tr>
                     <td>100%</td>
                     <td>2030</td>
                     <td class="faturat"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="comEner"></td>
+                    <td class="ecoMens"></td>
+                    <td class="ecoMens"></td>
                     <td class="lucro"></td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <div class="row infoDados">
+        <p>&nbsp;Dados da tabela considerando um aumento na tarifa da concessionaria médio de 5% anual e Regras da LEI 14.300 aplicadas em 06/01/2023. Vale informar que são apenas estimativas aproximadas de calculo considerando a concessionaria CELESC, recomendamos que solicite um orçamento com nossos consultores para analisarem o seu caso com individualidade e assim realizar um projeto especifico.</p>
+    </div>
 </div>
 
 <!-- Sessão Pega Formulario -->
-<div class="container-fluid containers col-md-11 col-sm-12 divContatoForm">
+<div class="container-fluid containers col-md-12 col-sm-12 divContatoForm">
     <div class="row divPreencha">
         <h3 class="preencha">Preencha o formulário.</h3>
     </div>
@@ -271,7 +273,6 @@
                         <div class="info">
                             <div class="head">Contato</div>
                             <div class="sub-title">(48) 3371-5402</div>
-                            <div class="sub-title">(48) 99186-8080</div>
                         </div>
                     </div>
                     <div class="row">
@@ -319,7 +320,7 @@
 </div>
 
 <!-- Sessão Area de Destaque -->
-<div class="container containers col-md-11 col-sm-12 divDestaque">
+<div class="container containers col-md-12 col-sm-12 divDestaque">
     <p class="click">Click em <button class="btn btn-primary build">CARREGAR</button> para ver o gráfico com suas economias.</p>
     <div class="row">
         <canvas class="grafico" id="acquisitions"></canvas>
