@@ -26,6 +26,10 @@ html{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background: #002c8b54;
+    height: 95%;
+    width: 100%;
+    border-radius: 15px;
     
 }
 .divCima .row h1{
@@ -55,9 +59,6 @@ html{
     z-index: 996;
     transition: all 0.3s ease;
     background: #0000008f;
-}
-.navbarDados{
-  
 }
 .navbar.sticky{ 
     background:  #000000;
@@ -94,6 +95,7 @@ html{
 .fatura{
     background: url(../img/vermelho.avif) no-repeat center;
     color: white;
+    border-radius: 15px 0 15px 0;
 }
 .faturat{
     color: rgb(185, 21, 21);
@@ -107,14 +109,17 @@ html{
 .pEnergia{
     background: url(../img/azul.avif) no-repeat center;
     color: white;
+    border-radius: 15px 0 15px 0;
 }
 .eMensal{
     background: url(../img/verde.avif) no-repeat center;
     color: white;
+    border-radius: 15px 0 15px 0;
 }
 .eAnual{
     background: url(../img/verde2.avif) no-repeat center;
     color: white;
+    border-radius: 15px 0 15px 0;
 }
 table{
     text-align: center;
@@ -152,7 +157,6 @@ table{
     text-decoration: none;
     color: black;
 }
-
 ion-icon{
     font-size: 25px;
     color:  #178a9e;
@@ -278,7 +282,7 @@ ion-icon{
     align-items: center;
     justify-content: center;
     background: url(../img/eco2023.crdownload) no-repeat center;
-    border-radius: 15px 0 15px 0;
+    border-radius: 25px 0 25px 0;
     padding: 15px;
 }
 .container .economia ion-icon{
