@@ -41,9 +41,7 @@ html{
     margin-top: 2px;
     margin-bottom: 2px;
     padding-top: 30px;
-    /* background: url(../img/fundoAzul.avif); */
-    background: #a9bbbe60;
-   
+    background: #a9bbbe60; 
 }
 /* Sessão NavBar */
 .navbar img{
@@ -56,7 +54,10 @@ html{
     font-family: 'Orbitron', sans-serif;
     z-index: 996;
     transition: all 0.3s ease;
-    background: #000000c4;
+    background: #0000008f;
+}
+.navbarDados{
+  
 }
 .navbar.sticky{ 
     background:  #000000;
@@ -84,10 +85,8 @@ html{
 
 /* Sessão Tabela*/
 .lucro{
-    color: rgb(12, 148, 0);
-    
+    color: rgb(12, 148, 0);   
 }
-
 .vazio{
     text-decoration: none;
     border: 0;
@@ -130,18 +129,18 @@ table{
     padding: 5px;
 }
 .infoDados{
-    margin: 20px 10px 0 10px;
-    background: url(../img/fundoAzul.avif) no-repeat center;
+    margin: 20px 0 0 0;
+    background: rgb(221, 220, 220);
     font-weight: bold;
     padding: 10px;
-    border-radius: 15px 0 15px 0;
+    border-radius: 0 0 15px 15px;
 }
 .infoDados p{
     font-size: 20px;
     margin-top: 10px;
-    text-align: justify;
+    text-align: left;
+    color: #0f5a68;
 }
-
 
 /* Sessão Formulario / Dados*/
 .div-right .row,
@@ -339,7 +338,7 @@ ion-icon{
 
 /* Sessão alerta */
 .alerta{
-    max-height: 40px;
+    width: 100%;
     margin: 5px;
     display: flex;
     align-items: center;
@@ -432,6 +431,11 @@ ion-icon{
 }
 
 /* Sessào Expansividade */
+@media (max-width: 1254px){
+    .divCima .row h1{
+        font-size: 45px;
+    }
+}
 @media (max-width: 1155px){
     .container .icons .info{
         font-size: 17px;
@@ -440,9 +444,12 @@ ion-icon{
         left: 0;
     }
 }
-@media (max-width: 1159px){
+@media (max-width: 1033px){
     .divCima .row h1{
-        font-size: 45px;
+        font-size: 35px;
+    }
+    .divCima{
+        max-height: 350px;
     }
 }
 @media (max-width: 1013px){
@@ -452,11 +459,24 @@ ion-icon{
     .whats img{
         width: 80px;
     }
-
-}
-@media (max-width: 962px){
-    .divCima .row h1{
-        font-size: 35px;
+    .divRadio{
+        max-height: 40px;
+        font-size: 20px;
+    }
+    .tipoRede{
+        min-height: 50px;
+    }
+    
+    .divPegaGasto{
+        font-size: 20px;
+    }
+    
+    .divPegaGasto input{
+        font-size: 20px;
+        min-height: 44px;
+    }
+    .divPegaGasto span{
+        font-size: 20px;
     }
 }
 @media (max-width: 930px){
@@ -468,10 +488,46 @@ ion-icon{
         margin: 25%;
         font-size: 13px;
     }
+    .preencha{
+        font-size: 20px;
+    }
 }
 @media (max-width: 898px){
     .container .icons .info{
         font-size: 13px;
+    }
+
+    .divRadio{
+        max-height: 40px;
+        font-size: 20px;
+    }
+    .tipoRede{
+        min-height: 50px;
+    }
+    
+    .divPegaGasto,
+    .divPegaGasto span{
+        font-size: 20px;
+    }
+    
+    .divPegaGasto input{
+        font-size: 20px;
+        min-height: 44px;
+    }
+    .informe{
+        font-size: 30px;
+    }
+
+    .container .economia ion-icon{
+        font-size: 40px;
+    }
+    .container .economia button{
+        margin-left: 10px;
+        font-size: 20px;
+        padding: 7px;
+    }
+    .container .economia p{
+        font-size: 20px;
     }
 }
 @media (max-width: 841px){
@@ -497,6 +553,19 @@ ion-icon{
     }
     .footer{
         font-size: 12px;
+    }
+}
+@media (max-width: 817px){
+    .divCima .row h1{
+        font-size: 30px;
+    }
+    .divCima .row h3{
+        font-size: 24px;
+    }
+    .divCima{
+        max-height: 300px;
+        align-items: end;
+        padding-bottom: 50px;
     }
 }
 @media (max-width: 767px){
@@ -531,28 +600,16 @@ ion-icon{
     .logosTopo ion-icon{
         font-size: 15px;
     }
+}
+@media (max-width: 709px){
     .divCima .row h1{
-        font-size: 30px;
+        font-size: 25px;
     }
     .divCima .row h3{
-        font-size: 24px;
+        font-size: 19px;
     }
-}
-@media (max-width: 690px){
-    .container .divInforme,
-    .divPegaGasto span,
-    .divPegaGasto input,
-    .formGroup label,
-    .divPreencha,
-    .infoDados p,
-    .divForm,
-    .preencha,
-    .form-group input{
-        font-size: 15px;
-    }
-    .divPegaGasto input,
-    .form-group input{
-        max-height: 40px;
+    .divCima{
+        max-height: 250px;
     }
 }
 @media (max-width: 663px){
@@ -563,21 +620,20 @@ ion-icon{
         font-size: 18px;
     }
 }
-@media (max-width: 650px){
+@media (max-width: 601px){
 
-    .container .divInforme,
-    .divPegaGasto span,
-    .divPegaGasto input,
-    .formGroup label,
-    .container .economia,
-    .infoDados p{
-        font-size: 13px;
+    .divCima .row h1{
+        font-size: 22px;
     }
-    .divPegaGasto input,
-    .divRadio{
-        max-height: 32px;
+    .divCima .row h3{
+        font-size: 15px;
     }
-
+    .divCima{
+        margin: 0;
+        max-height: 210px;
+        align-items: end;
+        padding: 20px;
+    }
 }
 @media (max-width: 590px){
     .container .alerta{
@@ -589,6 +645,9 @@ ion-icon{
     .infoDados{
         margin: 20px 0 0 0;  
     }
+}
+@media (max-width: 600px){
+    
 }
 @media (max-width: 561px){
     .divCima .row h1{
@@ -621,10 +680,66 @@ ion-icon{
     .divDestaque .build{
         font-size: 10px;
     }
+    .infoDados{
+        margin: 0;
+        padding: 0 8px;
+    }
     .infoDados p{
         font-size: 12px;
     }
+    .preencha{
+        font-size: 16px;
+    }
 }
+@media (max-width: 527px){
+    .divRadio{
+        max-height: 40px;
+        font-size: 18px;
+    }
+    .tipoRede{
+        min-height: 50px;
+    }
+    
+    .divPegaGasto,
+    .divPegaGasto span{
+        font-size: 18px;
+    }
+    
+    .divPegaGasto input{
+        font-size: 18px;
+        min-height: 41px;
+    }
+    .informe{
+        font-size: 25px;
+    }
+
+    .container .economia ion-icon{
+        font-size: 30px;
+    }
+    .container .economia button{
+        margin-left: 10px;
+        font-size: 20px;
+        padding: 7px;
+    }
+    .container .economia p{
+        font-size: 20px;
+    }
+    .container .economia{
+        margin: 10px 0 0 0;
+        padding: 5px 0 5px 0;
+    }
+
+    .divCima .row h1{
+        font-size: 16px;
+    }
+    .divCima .row h3{
+        font-size: 12px;
+    }
+    .divCima{
+        margin: 0;
+    }
+}
+
 @media (max-width: 512px){
     .div-right .row,
     .div-left .row{
@@ -634,7 +749,10 @@ ion-icon{
     .container .alerta{
         font-size: 14px;
     }
-
+    .divCima .row{
+        margin: 0;
+        padding: 0;
+    }
 }
 @media (max-width: 468px){
     .div-right .row,
@@ -653,6 +771,10 @@ ion-icon{
     }
     .divCima .row h3{
         font-size: 12px;
+    }
+    .divCima{
+        align-items: end;
+        padding-bottom: 30px;
     }
     
 }
@@ -673,6 +795,45 @@ ion-icon{
         font-size: 10px;
     }
 }
+@media (max-width: 429px){
+    .divRadio{
+        max-height: 40px;
+        font-size: 14px;
+        margin-bottom: 10px
+    }
+    .tipoRede{
+        min-height: 40px;
+    }
+    
+    .divPegaGasto,
+    .divPegaGasto span{
+        font-size: 16px;
+    }
+    
+    .divPegaGasto input{
+        font-size: 16px;
+        min-height: 5px;
+    }
+    .informe{
+        font-size: 19px;
+    }
+
+    .container .economia ion-icon{
+        font-size: 20px;
+    }
+    .container .economia button{
+        margin-left: 10px;
+        font-size: 16px;
+        padding: 7px;
+    }
+    .container .economia p{
+        font-size: 16px;
+    }
+    .container .economia{
+        margin: 10px 0 0 0;
+        padding: 5px 0 5px 0;
+    }
+}
 @media (max-width: 415px){
     .tableCima{
         font-size: 7px;
@@ -680,6 +841,19 @@ ion-icon{
     .tableCima tr th,
     .tableCima tr td{
         padding: 1px;
+    }
+}
+@media (max-width: 381px){
+    .divCima .row h1{
+        font-size: 15px;
+    }
+    .divCima .row h3{
+        font-size: 10px;
+    }
+    .divCima{
+        max-height: 180px;
+        align-items: end;
+        padding-bottom: 30px;
     }
 }
 @media (max-width: 372px){

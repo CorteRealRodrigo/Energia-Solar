@@ -232,7 +232,8 @@ window.onload = function() {
     const insereDestaque = (y, z) => {
         const economia = $('.economiaAno');
         const porcento = $('.economiaPorc');
-        economia.text(pegaLinha(y));
+        const pegaLinha = window.$('td').eq(y).text();
+        economia.text(pegaLinha);
         const row = window.$('td').eq(z).text();
         porcento.text(row);
     }
