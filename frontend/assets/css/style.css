@@ -115,6 +115,7 @@ html{
     background: url(../img/verde.avif) no-repeat center;
     color: white;
     border-radius: 15px 0 15px 0;
+    min-width: 70px;
 }
 .eAnual{
     background: url(../img/verde2.avif) no-repeat center;
