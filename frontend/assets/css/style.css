@@ -188,7 +188,6 @@ ion-icon{
 .divRows{
     width: 100%;
     flex-wrap: nowrap;
-    margin-bottom: 15px;
 }
 .divPegaGasto{
     display: flex;
@@ -282,7 +281,7 @@ ion-icon{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(../img/azulAlerta.jpg) no-repeat center;
+    background: url(../img/azul321.png) no-repeat center;
     border-radius: 25px 0 25px 0;
     padding: 15px;
 }
