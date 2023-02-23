@@ -75,19 +75,15 @@
 
 <!-- Sessão Pega Dados -->
 <div class="container containers containerPegaDados col-md-12 col-sm-12">
-    
     <div class="row col-sm-12 divRows">
-
         <div class="row">
             <div class="col-md-7 col-sm-12 divAlert" >
                 <div class="alert alert-danger alerta"></div>
             </div>
         </div>
-    
         <div class="row divInforme">
             <h2 class="informe">Tipo de imovel</h2>
         </div>
-    
         <div class=" row divRadio col-sm-6">
             <div class="formGroup">
                 <div class="input-group-text divRadio">
@@ -102,11 +98,9 @@
                 </div>
             </div>
         </div>
-    
         <div class="row divInforme">
             <h2 class="informe">Tipo de rede</h2>
         </div>
-    
         <div class="row divSelect">
             <select class="input-group-text tipoRede divRadio" aria-label="Default select example">
                 <option selected class="tipoRede">Informe seu tipo de rede</option>
@@ -115,11 +109,9 @@
                 <option value="3">Trifásico</option>
             </select>
         </div>
-    
         <div class="row divInforme">
             <h2 class="informe">Consumo mensal</h2>
         </div>
-    
         <div class=" row input-group col-sm-6 divPegaGasto">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Consumo</span>
@@ -127,7 +119,6 @@
             <input type="number" id="txtBuscaResidencial" class="form-control inputPegaValor" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
             <span>kWH/mês</span>
         </div>
-    
     </div>
     <div class="row economia">
         <ion-icon name="cash-outline"></ion-icon>
@@ -136,7 +127,6 @@
             <button>Falar com um especialista</button>
         </a>
     </div>
-
 </div>
 
 <!-- Sessão Tabela Calculos -->
@@ -267,7 +257,6 @@
         <div class="icons col-md-6 divContato">
             <div class="row">
                 <div class="div-left col-md-6">
-
                     <div class="row" id="contato">
                         <ion-icon name="logo-whatsapp"></ion-icon>
                         <div class="info">
@@ -306,7 +295,6 @@
 
             </div>
         </div>
-
         <script>
             function formatar(mascara, documento){
                 const i = documento.value.length;
@@ -315,7 +303,6 @@
                 if (texto.substring(0,1) != saida) documento.value += texto.substring(0,1);
             }
         </script>
-          
     </div>
 </div>
 
@@ -326,5 +313,4 @@
         <canvas class="grafico" id="acquisitions"></canvas>
     </div>
 </div>
-
 <%- include('includes/footer'); %> <!-- Add dados da pasta include(footer) -->
