@@ -3,132 +3,13 @@ import 'regenerator-runtime/runtime';
 import './assets/css/style.css';
 import Chart from 'chart.js/auto'
 
+
 window.onload = function() {
     $('#txtBuscaResidencial').click(() => {
         verificaRadioSelect();
     })
     $('#txtBuscaResidencial').keyup((c, d) => {
-        const radio = $('input[name="theradio"]:checked').attr('id');
-        
-        verificaRadioSelect();
-        if(radio === 'radio1') {
-            c = 0.7;
-        }
-        if(radio === 'radio2') {
-            c = 0.5;
-        }
-
-        const tipoEnergia = $('.tipoRede').val();
-        if(tipoEnergia == 1) {
-            function* cores(){ 
-                yield '17.25';  
-                yield '18.11';  
-                yield '19.02';  
-                yield '19.97';  
-                yield '20.97';  
-                yield '22.02';  
-                yield '23.12';
-                yield '24.27';
-            }
-            d = cores();
-        }
-        if(tipoEnergia == 2) {
-            function* cores(){ 
-                yield '28.75';
-                yield '30.19';
-                yield '31.70';
-                yield '33.28';
-                yield '34.95';
-                yield '36.69';
-                yield '38.53';
-                yield '40.45';
-            }
-            d = cores();
-        }
-        if(tipoEnergia == 3) {
-            function* cores(){ 
-                yield '57.50';
-                yield '60.38';
-                yield '63.39';
-                yield '66.56';
-                yield '69.89';
-                yield '73.39';
-                yield '77.06';
-                yield '80.91';
-            }
-            d = cores();
-        }
-
-
-        
-
-        
-        calculoPorLinhaFatura(0.575, 45);
-        calculoPorLinhaFatura(0.604, 52);
-        calculoPorLinhaFatura(0.634, 59);
-        calculoPorLinhaFatura(0.666, 66);
-        calculoPorLinhaFatura(0.699, 73);
-        calculoPorLinhaFatura(0.734, 80);
-        calculoPorLinhaFatura(0.771, 87);
-        calculoPorLinhaFatura(0.809, 94);
-    
-        calculoPorLinhaEnergia(0.018, 46, c, d);
-        calculoPorLinhaEnergia(0.037, 53, c, d);
-        calculoPorLinhaEnergia(0.059, 60, c, d);
-        calculoPorLinhaEnergia(0.082, 67, c, d);
-        calculoPorLinhaEnergia(0.108, 74, c, d);
-        calculoPorLinhaEnergia(0.136, 81, c, d);
-        calculoPorLinhaEnergia(0.146, 88, c, d);
-        calculoPorLinhaEnergia(0.153, 95, c, d);
-
-        
-        
-        
-        calculaLinhaMensal(45, 46, 47);
-        calculaLinhaMensal(52, 53, 54);
-        calculaLinhaMensal(59, 60, 61);
-        calculaLinhaMensal(66, 67, 68);
-        calculaLinhaMensal(73, 74, 75);
-        calculaLinhaMensal(80, 81, 82);
-        calculaLinhaMensal(87, 88, 89);
-        calculaLinhaMensal(94, 95, 96);
-        
-        calculaLinhaMensalPor(47, 45, 48);
-        calculaLinhaMensalPor(54, 52, 55);
-        calculaLinhaMensalPor(61, 59, 62);
-        calculaLinhaMensalPor(68, 66, 69);
-        calculaLinhaMensalPor(75, 73, 76);
-        calculaLinhaMensalPor(82, 80, 83);
-        calculaLinhaMensalPor(89, 87, 90);
-        calculaLinhaMensalPor(96, 94, 97);
-        
-        calculaLinhaAnual(47, 49);
-        calculaLinhaAnual(54, 56);
-        calculaLinhaAnual(61, 63);
-        calculaLinhaAnual(68, 70);
-        calculaLinhaAnual(75, 77);
-        calculaLinhaAnual(82, 84);
-        calculaLinhaAnual(89, 91);
-        calculaLinhaAnual(96, 98); 
-
-        const date = new Date().getFullYear();
-        if(date === 2023) insereDestaque(49, 48);
-        if(date === 2024) insereDestaque(56, 55);
-        if(date === 2025) insereDestaque(63, 62);
-        if(date === 2026) insereDestaque(70, 69);
-        if(date === 2027) insereDestaque(77, 76);
-        if(date === 2028) insereDestaque(84, 83);
-        if(date === 2029) insereDestaque(91, 90);
-        if(date === 2030) insereDestaque(98, 97);
-
-        const valorBusca = $('#txtBuscaResidencial').val();
-        if(valorBusca.length > 2) {
-            $('.economia').addClass('ativar');
-
-        } else{
-            $('.economia').removeClass('ativar');
-        }
-        
+        calculaValores(c, d);
     });
 
     const btn = document.getElementById('button');
@@ -151,6 +32,12 @@ window.onload = function() {
                 alert(JSON.stringify(err));
             });
     });
+
+    //$('.radio').click((c, d) => {
+    //    if(!$('#txtBuscaResidencial').val()){
+    //        calculaValores(c, d);
+    //    }
+    //})
     
     $('.build').click(() => {
         if(!$('#txtBuscaResidencial').val()){
@@ -228,6 +115,121 @@ window.onload = function() {
         }
     });
 
+    const calculaValores = (c, d) => {
+        const radio = $('input[name="theradio"]:checked').attr('id');
+        
+        verificaRadioSelect();
+        if(radio === 'radio1') {
+            c = 0.7;
+        }
+        if(radio === 'radio2') {
+            c = 0.5;
+        }
+
+        const tipoEnergia = $('.tipoRede').val();
+        if(tipoEnergia == 1) {
+            function* cores(){ 
+                yield '17.25';  
+                yield '18.11';  
+                yield '19.02';  
+                yield '19.97';  
+                yield '20.97';  
+                yield '22.02';  
+                yield '23.12';
+                yield '24.27';
+            }
+            d = cores();
+        }
+        if(tipoEnergia == 2) {
+            function* cores(){ 
+                yield '28.75';
+                yield '30.19';
+                yield '31.70';
+                yield '33.28';
+                yield '34.95';
+                yield '36.69';
+                yield '38.53';
+                yield '40.45';
+            }
+            d = cores();
+        }
+        if(tipoEnergia == 3) {
+            function* cores(){ 
+                yield '57.50';
+                yield '60.38';
+                yield '63.39';
+                yield '66.56';
+                yield '69.89';
+                yield '73.39';
+                yield '77.06';
+                yield '80.91';
+            }
+            d = cores();
+        }
+        
+        calculoPorLinhaFatura(0.575, 45);
+        calculoPorLinhaFatura(0.604, 52);
+        calculoPorLinhaFatura(0.634, 59);
+        calculoPorLinhaFatura(0.666, 66);
+        calculoPorLinhaFatura(0.699, 73);
+        calculoPorLinhaFatura(0.734, 80);
+        calculoPorLinhaFatura(0.771, 87);
+        calculoPorLinhaFatura(0.809, 94);
+    
+        calculoPorLinhaEnergia(0.018, 46, c, d);
+        calculoPorLinhaEnergia(0.037, 53, c, d);
+        calculoPorLinhaEnergia(0.059, 60, c, d);
+        calculoPorLinhaEnergia(0.082, 67, c, d);
+        calculoPorLinhaEnergia(0.108, 74, c, d);
+        calculoPorLinhaEnergia(0.136, 81, c, d);
+        calculoPorLinhaEnergia(0.146, 88, c, d);
+        calculoPorLinhaEnergia(0.153, 95, c, d);
+        
+        calculaLinhaMensal(45, 46, 47);
+        calculaLinhaMensal(52, 53, 54);
+        calculaLinhaMensal(59, 60, 61);
+        calculaLinhaMensal(66, 67, 68);
+        calculaLinhaMensal(73, 74, 75);
+        calculaLinhaMensal(80, 81, 82);
+        calculaLinhaMensal(87, 88, 89);
+        calculaLinhaMensal(94, 95, 96);
+        
+        calculaLinhaMensalPor(47, 45, 48);
+        calculaLinhaMensalPor(54, 52, 55);
+        calculaLinhaMensalPor(61, 59, 62);
+        calculaLinhaMensalPor(68, 66, 69);
+        calculaLinhaMensalPor(75, 73, 76);
+        calculaLinhaMensalPor(82, 80, 83);
+        calculaLinhaMensalPor(89, 87, 90);
+        calculaLinhaMensalPor(96, 94, 97);
+        
+        calculaLinhaAnual(47, 49);
+        calculaLinhaAnual(54, 56);
+        calculaLinhaAnual(61, 63);
+        calculaLinhaAnual(68, 70);
+        calculaLinhaAnual(75, 77);
+        calculaLinhaAnual(82, 84);
+        calculaLinhaAnual(89, 91);
+        calculaLinhaAnual(96, 98); 
+
+        const date = new Date().getFullYear();
+        if(date === 2023) insereDestaque(49, 48);
+        if(date === 2024) insereDestaque(56, 55);
+        if(date === 2025) insereDestaque(63, 62);
+        if(date === 2026) insereDestaque(70, 69);
+        if(date === 2027) insereDestaque(77, 76);
+        if(date === 2028) insereDestaque(84, 83);
+        if(date === 2029) insereDestaque(91, 90);
+        if(date === 2030) insereDestaque(98, 97);
+
+        const valorBusca = $('#txtBuscaResidencial').val();
+        if(valorBusca.length > 2) {
+            $('.economia').addClass('ativar');
+
+        } else{
+            $('.economia').removeClass('ativar');
+        }
+    }
 
     const insereDestaque = (y, z) => {
         const economia = $('.economiaAno');

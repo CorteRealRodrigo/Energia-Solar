@@ -75,55 +75,71 @@
 
 <!-- Sessão Pega Dados -->
 <div class="container containers containerPegaDados col-md-12 col-sm-12">
-    <div class="row col-sm-12 divRows">
-        <div class="row">
-            <div class="col-md-7 col-sm-12 divAlert" >
-                <div class="alert alert-danger alerta"></div>
-            </div>
-        </div>
-        <div class="row divInforme">
-            <h2 class="informe">Tipo de imovel</h2>
-        </div>
-        <div class=" row divRadio col-sm-6">
-            <div class="formGroup">
-                <div class="input-group-text divRadio">
-                    <input class="radio" name="theradio" id="radio1" type="radio" aria-label="Botão radio para acompanhar input text">
-                    <label class="label" for="radio1">Residencial</label>
-                </div>
-            </div>
-            <div class="formGroup">
-                <div class="input-group-text divRadio">
-                    <input class="radio" name="theradio" id="radio2" type="radio" aria-label="Botão radio para acompanhar input text">
-                    <label class="label" for="radio2">Comercial</label>
-                </div>
-            </div>
-        </div>
-        <div class="row divInforme">
-            <h2 class="informe">Tipo de rede</h2>
-        </div>
-        <div class="row divSelect">
-            <select class="input-group-text tipoRede divRadio" aria-label="Default select example">
-                <option selected class="tipoRede">Informe seu tipo de rede</option>
-                <option value="1">Monofásico</option>
-                <option value="2">Bifásico</option>
-                <option value="3">Trifásico</option>
-            </select>
-        </div>
-        <div class="row divInforme">
-            <h2 class="informe">Consumo mensal</h2>
-        </div>
-        <div class=" row input-group col-sm-6 divPegaGasto">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Consumo</span>
-            </div>
-            <input type="number" id="txtBuscaResidencial" class="form-control inputPegaValor" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
-            <span>kWH/mês</span>
+
+    
+    <div class="row col-sm-12">
+        <div class="col-md-7 col-sm-12 divAlert" >
+            <div class="alert alert-danger alerta"></div>
         </div>
     </div>
+   
+
+    <div class="row col-sm-12 divRows">
+
+
+        <div class="row col-sm-4">
+            <div class="row divInforme">
+                <h2 class="informe">Tipo de imovel</h2>
+            </div>
+            <div class=" row divRadio col-sm-6">
+                <div class="formGroup">
+                    <div class="input-group-text divRadio">
+                        <input class="radio" name="theradio" id="radio1" type="radio" aria-label="Botão radio para acompanhar input text">
+                        <label class="label" for="radio1">Residencial</label>
+                    </div>
+                </div>
+                <div class="formGroup">
+                    <div class="input-group-text divRadio">
+                        <input class="radio" name="theradio" id="radio2" type="radio" aria-label="Botão radio para acompanhar input text">
+                        <label class="label" for="radio2">Comercial</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row col-sm-4">
+            <div class="row divInforme">
+                <h2 class="informe">Tipo de rede</h2>
+            </div>
+            <div class="row divSelect">
+                <select class="input-group-text tipoRede divRadio" aria-label="Default select example">
+                    <option selected class="tipoRede">Informe seu tipo de rede</option>
+                    <option value="1">Monofásico</option>
+                    <option value="2">Bifásico</option>
+                    <option value="3">Trifásico</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="row col-sm-4">
+            <div class="row divInforme">
+                <h2 class="informe">Consumo mensal</h2>
+            </div>
+            <div class=" row input-group col-sm-6 divPegaGasto">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Consumo</span>
+                </div>
+                <input type="number" id="txtBuscaResidencial" class="form-control inputPegaValor" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
+                <span>kWH/mês</span>
+            </div>
+        </div>
+    </div>
+
+
     <div class="row economia">
         <ion-icon name="cash-outline"></ion-icon>
-        <p>Sua economia no ano cheio de <%- new Date().getFullYear();%> será de&nbsp;</p><p class="economiaAno"></p> <p>.00&nbsp; </p> <p> Uma economia de&nbsp;</p><p class="economiaPorc"></p>
-        <a href="https://wa.me/5548991807618" target="_blank">
+        <p>Sua economia no ano cheio de <%- new Date().getFullYear();%> será de&nbsp;</p><p class="economiaAno"></p><p>. Uma economia de&nbsp;</p><p class="economiaPorc"></p><p class="queroBold">&nbsp;QUERO TER ESSA ECONOMIA!!!</p>
+        <a href="https://wa.me/554833715402" target="_blank">
             <button>Falar com um especialista</button>
         </a>
     </div>
@@ -229,7 +245,7 @@
         </table>
     </div>
     <div class="row infoDados">
-        <p>&nbsp;Dados da tabela considerando um aumento na tarifa da concessionaria médio de 5% anual e Regras da LEI 14.300 aplicadas em 06/01/2023. Vale informar que são apenas estimativas aproximadas de calculo considerando a concessionaria CELESC, recomendamos que solicite um orçamento com nossos consultores para analisarem o seu caso com individualidade e assim realizar um projeto especifico.</p>
+        <p>&nbsp;Dados da tabela considerando um aumento na tarifa da concessionaria médio de 5% anual, Regras da LEI 14.300 aplicadas em 06/01/2023 e sendo desconsiderados impostos na fatura de energia (cosip,icms...). Vale informar que são apenas estimativas aproximadas de calculo considerando a concessionaria CELESC, recomendamos que solicite um orçamento com nossos consultores para analisarem o seu caso com individualidade e assim realizar um projeto especifico.</p>
     </div>
 </div>
 
@@ -274,22 +290,26 @@
                 </div>
                 <div class="div-right col-md-6">
                     <div class="row">
-                        <ion-icon name="logo-instagram"></ion-icon>
-                        <div class="info">
-                            <div class="head">Instagram</div>
-                            <a href="https://www.instagram.com/mgtecenergiasolar/" target="_blank">
-                                <div class="sub-title">@mgtecenergiasolar</div>
-                            </a>
-                        </div>
+                        <a href="https://www.instagram.com/mgtecenergiasolar/" target="_blank">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                            <div class="info">
+                                <div class="head">Instagram</div>
+                                <a href="https://www.instagram.com/mgtecenergiasolar/" target="_blank">
+                                    <div class="sub-title">@mgtecenergiasolar</div>
+                                </a>
+                            </div>
+                        </a>
                     </div>
                     <div class="row">
-                        <ion-icon name="globe-outline"></ion-icon>
-                        <div class="info">
-                            <div class="head">Site</div>
-                            <a href="https://www.mgtecsolar.com.br/" target="_blank">
-                                <div class="sub-title">mgtecsolar.com.br</div>
-                            </a>
-                        </div>
+                        <a href="https://www.mgtecsolar.com.br/" target="_blank">
+                            <ion-icon name="globe-outline"></ion-icon>
+                            <div class="info">
+                                <div class="head">Site</div>
+                                <a href="https://www.mgtecsolar.com.br/" target="_blank">
+                                    <div class="sub-title">mgtecsolar.com.br</div>
+                                </a>
+                            </div>
+                        </a>
                     </div>
                 </div>
 

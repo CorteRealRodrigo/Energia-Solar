@@ -137,7 +137,6 @@ table{
 .infoDados{
     margin: 20px 0 0 0;
     background: rgb(221, 220, 220);
-    font-weight: bold;
     padding: 10px;
     border-radius: 0 0 15px 15px;
 }
@@ -187,7 +186,9 @@ ion-icon{
     color: #0f5a68;
 }
 .divRows{
-    max-width: 380px;
+    width: 100%;
+    flex-wrap: nowrap;
+    margin-bottom: 15px;
 }
 .divPegaGasto{
     display: flex;
@@ -315,6 +316,10 @@ ion-icon{
 .container .economia p{
     margin: 0;
 }
+.queroBold{
+    color: green;
+    font-weight: bold;
+}
 .tipoRede{
     margin-left: 0;
     min-height: 50px;
@@ -438,6 +443,19 @@ ion-icon{
         font-size: 45px;
     }
 }
+
+
+
+@media (max-width: 1254px){
+    .divRows{
+        max-height: 380px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
 @media (max-width: 1155px){
     .container .icons .info{
         font-size: 17px;
@@ -641,9 +659,6 @@ ion-icon{
         margin: 20px 0 0 0;  
     }
 }
-@media (max-width: 600px){
-    
-}
 @media (max-width: 561px){
     .divCima .row h1{
         font-size: 20px;
@@ -828,6 +843,8 @@ ion-icon{
         padding: 1px;
     }
 }
+
+
 @media (max-width: 381px){
     .divCima .row h1{
         font-size: 15px;
@@ -839,6 +856,10 @@ ion-icon{
         max-height: 180px;
         align-items: end;
         padding-bottom: 30px;
+    }
+    .divRows{
+        align-items: baseline;
+        padding-left: 0;
     }
 }
 @media (max-width: 372px){
