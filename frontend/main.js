@@ -42,7 +42,7 @@ window.onload = function() {
     $('.build').click(() => {
         if(!$('#txtBuscaResidencial').val()){
             $('html, body').animate({ scrollTop: 10 }, 50);
-            const alerta = $('.alerta').text('Informe seu consumo.');
+            const alerta = $('.alerta').text('INFORME SEU CONSUMO.');
             alerta.addClass('ativar');
             return;
         }
@@ -84,7 +84,7 @@ window.onload = function() {
             config
         );
         $('.build').addClass('desativar');
-        $('.click').text('O gráfico abaixo mostra seus lucros até o ano de 2030, repare que seus lucros aumentam a cada ano.').css('color', 'green');
+        $('.click').text('O gráfico abaixo mostra suas economias até o ano de 2030, repare que eles aumentam a cada ano.').css('color', 'green');
 
         function destroy(){
             myChart.destroy();
@@ -257,7 +257,6 @@ window.onload = function() {
         const td = insereValorLinha(z, linha45TextInsere);
     }
 
-
     const calculoPorLinhaEnergia = (y, z, x, d) => {
         const gastoMesResidencial = $('#txtBuscaResidencial').val();
         const linha45 = Math.round(gastoMesResidencial * x * y);
@@ -276,8 +275,6 @@ window.onload = function() {
         const linha45TextInsere = ('R$ ' + linha45Text);
         insereValorLinha(z, linha45TextInsere);
     }
-
-
     
     const calculaLinhaMensal = (w, y, z) => {
         const pEnergia = pegaLinha(w);
@@ -306,7 +303,7 @@ window.onload = function() {
         const radio = $('input[name="theradio"]:checked').attr('id');
         if(!radio) {
             $('.divAlert').addClass('ativar');
-            $('.alerta').text('Informe se seu consumo é RESIDENCIAL ou COMERCIAL.');
+            $('.alerta').text('INFORME SE SEU CONSUMO É "RESIDENCIAL" OU "COMERCIAL".');
             $('.alert').addClass('ativar');
             $('#txtBuscaResidencial').blur();
             return;   
@@ -314,7 +311,7 @@ window.onload = function() {
         const select = $('.tipoRede').val();
         if(select === 'Informe seu tipo de rede') {
             $('.divAlert').addClass('ativar');
-            $('.alerta').text('Informe seu tipo de rede.');
+            $('.alerta').text('INFORME SEU TIPO DE REDE.');
             $('.alert').addClass('ativar');
             $('#txtBuscaResidencial').blur();
             return;   
