@@ -105,7 +105,11 @@ html{
 }
 .ecoMens{
     color: rgb(6, 82, 6);
-    min-width: 42px;
+    min-width: 38px;
+}
+.ecoMensR{
+    color: rgb(6, 82, 6);
+    min-width: 48px;
 }
 .pEnergia{
     background: url(../img/azul-.png) no-repeat center;
