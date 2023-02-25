@@ -32,12 +32,17 @@ window.onload = function() {
                 alert(JSON.stringify(err));
             });
     });
-
-    //$('.radio').click((c, d) => {
-    //    if(!$('#txtBuscaResidencial').val()){
-    //        calculaValores(c, d);
-    //    }
-    //})
+    
+    $('.radio').click((c, d) => {
+        if($('#txtBuscaResidencial').val().length > 0){
+            calculaValores(c, d);
+        }
+    })
+    $('.tipoRede').click((c, d) => {
+        if($('#txtBuscaResidencial').val().length > 0){
+            calculaValores(c, d);
+        }
+    })
     
     $('.build').click(() => {
         if(!$('#txtBuscaResidencial').val()){
