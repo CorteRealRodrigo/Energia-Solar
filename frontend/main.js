@@ -3,7 +3,6 @@ import 'regenerator-runtime/runtime';
 import './assets/css/style.css';
 import Chart from 'chart.js/auto'
 
-
 window.onload = function() {
     $('#txtBuscaResidencial').click(() => {
         verificaRadioSelect();
@@ -11,10 +10,9 @@ window.onload = function() {
     $('#txtBuscaResidencial').keyup((c, d) => {
         calculaValores(c, d);
     });
-
+    // ENVIA FORMULARIO
     const btn = document.getElementById('button');
     const msgAlerta = $('.preencha');
-    
     document.getElementById('form').addEventListener('submit', function(event) {
         event.preventDefault();
         btn.value = 'Enviando...';
@@ -32,7 +30,7 @@ window.onload = function() {
                 alert(JSON.stringify(err));
             });
     });
-    
+    // VERIFICA RADIO E TIPO DE REDE
     $('.radio').click((c, d) => {
         if($('#txtBuscaResidencial').val().length > 0){
             calculaValores(c, d);
@@ -43,7 +41,8 @@ window.onload = function() {
             calculaValores(c, d);
         }
     })
-    
+
+    // GRAFICOS DAS ECONOMIAS
     $('.build').click(() => {
         if(!$('#txtBuscaResidencial').val()){
             $('html, body').animate({ scrollTop: 10 }, 50);
@@ -101,7 +100,7 @@ window.onload = function() {
             );
         };
     });
-
+    // BTN SCROLL E BTN WHATS
     const scrollUpBtn = $('.scroll-up-btn');
     const navbar = $('.navbar');
     const whats = $('.whats');
@@ -119,10 +118,9 @@ window.onload = function() {
             navbar.removeClass('sticky'); 
         }
     });
-
+    
     const calculaValores = (c, d) => {
         const radio = $('input[name="theradio"]:checked').attr('id');
-        
         verificaRadioSelect();
         if(radio === 'radio1') {
             c = 0.7;
@@ -261,7 +259,6 @@ window.onload = function() {
         const linha45TextInsere = ('R$ ' + linha45Text);
         const td = insereValorLinha(z, linha45TextInsere);
     }
-
     const calculoPorLinhaEnergia = (y, z, x, d) => {
         const gastoMesResidencial = $('#txtBuscaResidencial').val();
         const linha45 = Math.round(gastoMesResidencial * x * y);
@@ -280,7 +277,6 @@ window.onload = function() {
         const linha45TextInsere = ('R$ ' + linha45Text);
         insereValorLinha(z, linha45TextInsere);
     }
-    
     const calculaLinhaMensal = (w, y, z) => {
         const pEnergia = pegaLinha(w);
         const eMensal = pegaLinha(y);

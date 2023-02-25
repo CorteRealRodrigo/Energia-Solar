@@ -19,7 +19,7 @@ html{
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    padding: 0;
 }
 .divCima .row{
     display: flex;
@@ -27,10 +27,8 @@ html{
     justify-content: center;
     flex-direction: column;
     background: #002c8b54;
-    height: 95%;
+    height: 100%;
     width: 100%;
-    border-radius: 15px;
-    
 }
 .divCima .row h1{
     font-size: 55px;
@@ -39,7 +37,13 @@ html{
 .divCima .row h3{
     font-family: 'pf beau sans', sans-serif !important;
     font-weight: bold;
+    color: white;
+    
+}.divCima .row h3{
     color: #ffffff;
+    padding: 6px 25px;
+    background: rgba(0, 0, 0, 0.432);
+    border-radius: 35px 0 35px 0;
 }
 .containers{
     margin-top: 2px;
