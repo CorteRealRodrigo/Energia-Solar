@@ -41,7 +41,8 @@ html{
     
 }.divCima .row h3{
     color: #ffffff;
-    padding: 6px 25px;
+    padding: 6
+    px 25px;
     background: rgba(0, 0, 0, 0.432);
     border-radius: 35px 0 35px 0;
 }
@@ -695,6 +696,9 @@ ion-icon{
     .divCima{
         max-height: 250px;
     }
+    .tusd{
+        font-size: 10px;
+    }
 }
 @media (max-width: 663px){
     .divCima .row h1{
@@ -817,6 +821,16 @@ ion-icon{
         padding: 0;
     }
 }
+@media (max-width: 480px){
+    .fatura,
+    .pEnergia{
+        font-size: 12px;
+    }
+    .eMensal{
+       font-size: 13px;
+        
+    }
+}
 @media (max-width: 468px){
     .div-right .row,
     .div-left .row{
@@ -895,15 +909,6 @@ ion-icon{
         font-size: 20px;
     }
 }
-@media (max-width: 415px){
-    .tableCima{
-        font-size: 7px;
-    }
-    .tableCima tr th,
-    .tableCima tr td{
-        padding: 1px;
-    }
-}
 @media (max-width: 419px){
     .divCima .row h1{
         font-size: 17px;
@@ -921,6 +926,23 @@ ion-icon{
     .divCima .row{
         justify-content: end;
         margin-bottom: 30px;
+    }
+}
+@media (max-width: 415px){
+    .tableCima{
+        font-size: 7px;
+    }
+    .tableCima tr th,
+    .tableCima tr td{
+        padding: 1px;
+    }
+    .div-right .row,
+    .div-left .row{
+        margin: 6px;
+        font-size: 9px;
+    }
+    .tableBaixo th{
+        font-size: 8px;
     }
 }
 @media (max-width: 397px){
@@ -949,15 +971,5 @@ ion-icon{
     }
     .divCima .row{
         margin-bottom: 23px;
-    }
-}
-@media (max-width: 372px){
-    .div-right .row,
-    .div-left .row{
-        margin: 6px;
-        font-size: 9px;
-    }
-    .tableBaixo th{
-        font-size: 8px;
     }
 }
