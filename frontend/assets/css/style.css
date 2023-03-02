@@ -41,8 +41,7 @@ html{
     
 }.divCima .row h3{
     color: #ffffff;
-    padding: 6
-    px 25px;
+    padding: 6px 25px;
     background: rgba(0, 0, 0, 0.432);
     border-radius: 35px 0 35px 0;
 }
@@ -90,8 +89,15 @@ html{
 }
 
 /* Sessão Tabela*/
+.containerTabela{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 5px;
+}
 .lucro{
-    color: rgb(12, 148, 0);   
+    color: rgb(12, 148, 0);
+    min-width: 48px;   
 }
 .vazio{
     text-decoration: none;
@@ -188,6 +194,7 @@ ion-icon{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding-top: 0;
 }
 .containerPegaDados h2{
     font-family: 'Roboto', sans-serif;
@@ -321,9 +328,15 @@ ion-icon{
     justify-content: center;
     background: url(../img/azul321.png) no-repeat center;
     border-radius: 25px 0 25px 0;
-    padding: 15px;
     max-width: 1250px;
     box-shadow: 0 0 10px rgb(0, 0, 0);
+    margin: 10px 10px;
+}
+.container .economia.ativar{
+    margin-top: 50px;
+    opacity: 1;   
+    padding: 15px; 
+    padding-bottom: 10px;
 }
 .container .economia ion-icon{
     color: rgb(68, 163, 68);
@@ -342,32 +355,19 @@ ion-icon{
     box-shadow: 0 0 5px rgb(0, 0, 0);
 }
 .container .economia p{
+    margin: 0;
     font-size: 30px;
     font-family: 'Chakra Petch', sans-serif;
     color: white;
-}
-.container .economia.ativar{
-    margin-top: 50px;
-    opacity: 1;
-}
-.container .economia{
-    margin: 10px 10px;
-    padding-bottom: 10px;
-}
-.container .economia p{
-    margin: 0;
 }
 .queroBold{
     color: green;
     font-weight: bold;
 }
 
-
 /* Sessão Area de Destaque */
 .divDestaque p{
     text-align: justify;
-}
-.divDestaque p{
     font-size: 20px;
     width: 100%;
     text-align: center;
@@ -391,10 +391,18 @@ ion-icon{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.divAlert{
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 .alerta{
+    margin: 0;
     width: 100%;
-    margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -861,9 +869,8 @@ ion-icon{
     .tableBaixo{
         font-size: 10px;
     }
-    .tableBaixo tr th,
-    .tableBaixo tr td{
-        padding: 3px;
+    .tableBaixo th{
+        font-size: 8px;
     }
 }
 @media (max-width: 435px){
@@ -940,9 +947,6 @@ ion-icon{
     .div-left .row{
         margin: 6px;
         font-size: 9px;
-    }
-    .tableBaixo th{
-        font-size: 8px;
     }
 }
 @media (max-width: 397px){
