@@ -13,12 +13,17 @@ html{
 .divCima1{
     display: none;
 }
-.divCima{
+.divCima,
+.divCima2{
     height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
+}
+.divCima{
+    display: none;
+    background: url(../img/energiaSolar2\ -\ Copia.jpg);
 }
 video{
     overflow: hidden;
@@ -503,6 +508,12 @@ ion-icon{
     .divCima .row h1{
         font-size: 45px;
     }
+    .divCima2{
+        display: none;
+    }
+    .divCima{
+        display: flex;
+    }
 }
 
 
@@ -530,6 +541,7 @@ ion-icon{
     .divCima .row h1{
         font-size: 35px;
     }
+    .divCima2,
     .divCima{
         max-height: 350px;
     }
@@ -650,6 +662,10 @@ ion-icon{
     .divCima .row h3{
         font-size: 24px;
     }
+    .divCima{
+        max-height: 300px;
+        align-items: end;
+    }
 
 }
 @media (max-width: 767px){
@@ -701,7 +717,9 @@ ion-icon{
     .divCima .row h3{
         font-size: 19px;
     }
-
+    .divCima{
+        max-height: 250px;
+    }
     .tusd{
         font-size: 10px;
     }
@@ -715,7 +733,7 @@ ion-icon{
     }
 }
 @media (max-width: 621px){
-    .divCima{
+    .divCima2{
         max-height: 300px;
     }
 }
@@ -726,6 +744,9 @@ ion-icon{
     }
     .divCima .row h3{
         font-size: 15px;
+    }
+    .divCima{
+        max-height: 250px;
     }
 
 }
@@ -777,11 +798,14 @@ ion-icon{
     .divCima .row h3{
         font-size: 15px;
     }
+    .divCima{
+        margin: 0;
+    }
 
 }
 
 @media (max-width: 535px){
-    .divCima{
+    .divCima2{
         max-height: 250px;
     }
 }
@@ -865,6 +889,9 @@ ion-icon{
     .divCima .row h3{
         font-size: 14px;
     }
+    .divCima{
+        max-height: 200px;
+    }
 
 }
 @media (max-width: 478px){
@@ -884,7 +911,7 @@ ion-icon{
 }
 
 @media (max-width: 443px){
-    .divCima{
+    .divCima2{
         max-height: 220px;
     }
 }
@@ -932,7 +959,9 @@ ion-icon{
     .divCima .row h3{
         font-size: 12px;
     }
-
+    .divCima{
+        max-height: 180px;
+    }
     .divRows{
         align-items: baseline;
         padding-left: 10px;
@@ -962,6 +991,9 @@ ion-icon{
     }
     .divCima .row h3{
         font-size: 11px;
+    }
+    .divCima{
+        max-height: 170px;
     }
 
     .divCima .row{
