@@ -14,12 +14,14 @@ html{
     display: none;
 }
 .divCima{
-    background: url(../img/energiaSolar2.jpg) no-repeat;
     height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
+}
+video{
+    overflow: hidden;
 }
 .divCima .row{
     display: flex;
@@ -39,7 +41,8 @@ html{
     font-weight: bold;
     color: white;
     
-}.divCima .row h3{
+}
+.divCima .row h3{
     color: #ffffff;
     padding: 6px 25px;
     background: rgba(0, 0, 0, 0.432);
@@ -49,7 +52,7 @@ html{
     margin-top: 2px;
     margin-bottom: 2px;
     padding-top: 30px;
-    background: #a9bbbe60; 
+    background: #e7e7ff; 
 }
 /* Sessão NavBar */
 .navbar img{
@@ -647,10 +650,7 @@ ion-icon{
     .divCima .row h3{
         font-size: 24px;
     }
-    .divCima{
-        max-height: 300px;
-        align-items: end;
-    }
+
 }
 @media (max-width: 767px){
     .navbar img{
@@ -701,9 +701,7 @@ ion-icon{
     .divCima .row h3{
         font-size: 19px;
     }
-    .divCima{
-        max-height: 250px;
-    }
+
     .tusd{
         font-size: 10px;
     }
@@ -716,6 +714,12 @@ ion-icon{
         font-size: 18px;
     }
 }
+@media (max-width: 621px){
+    .divCima{
+        max-height: 300px;
+    }
+}
+
 @media (max-width: 601px){
     .divCima .row h1{
         font-size: 22px;
@@ -723,12 +727,7 @@ ion-icon{
     .divCima .row h3{
         font-size: 15px;
     }
-    .divCima{
 
-        max-height: 250px;
-        
-    
-    }
 }
 @media (max-width: 590px){
     .container .alerta{
@@ -778,10 +777,15 @@ ion-icon{
     .divCima .row h3{
         font-size: 15px;
     }
+
+}
+
+@media (max-width: 535px){
     .divCima{
-        margin: 0;
+        max-height: 250px;
     }
 }
+
 @media (max-width: 527px){
     .divRadio{
         max-height: 40px;
@@ -861,9 +865,7 @@ ion-icon{
     .divCima .row h3{
         font-size: 14px;
     }
-    .divCima{
-        max-height: 200px;
-    }
+
 }
 @media (max-width: 478px){
     .tableBaixo{
@@ -880,6 +882,13 @@ ion-icon{
         font-size: 10px;
     }
 }
+
+@media (max-width: 443px){
+    .divCima{
+        max-height: 220px;
+    }
+}
+
 @media (max-width: 429px){
     .divRadio{
         max-height: 40px;
@@ -923,12 +932,10 @@ ion-icon{
     .divCima .row h3{
         font-size: 12px;
     }
-    .divCima{
-        max-height: 180px;
-    }
+
     .divRows{
         align-items: baseline;
-        padding-left: 0;
+        padding-left: 10px;
     }
     .divCima .row{
         justify-content: end;
@@ -956,9 +963,7 @@ ion-icon{
     .divCima .row h3{
         font-size: 11px;
     }
-    .divCima{
-        max-height: 170px;
-    }
+
     .divCima .row{
         margin-bottom: 25px;
     }
@@ -970,10 +975,11 @@ ion-icon{
     .divCima .row h3{
         font-size: 10px;
     }
-    .divCima{
-        max-height: 170px;
-    }
+
     .divCima .row{
         margin-bottom: 23px;
+    }
+    .divRows{
+        padding-left: 5px;
     }
 }
